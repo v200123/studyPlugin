@@ -1,15 +1,26 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.v200123.studyplugin</id>
-    <name>studyPlugin</name>
-    <vendor>v200123</vendor>
+    <id>com.github.airsaid.androidlocalize</id>
+    <name>AndroidLocalize</name>
+    <vendor email="airsaid1024@gmail.com" url="https://github.com/Airsaid/AndroidLocalizePlugin">Airsaid</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.v200123.studyplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.v200123.studyplugin.startup.MyProjectActivity" />
+        <applicationConfigurable parentId="tools"
+                                 instance="com.airsaid.localization.config.SettingsConfigurable"
+                                 id="com.airsaid.localization.config.SettingsConfigurable"/>
+
+        <notificationGroup id="Android Localize Plugin"
+                           displayType="BALLOON"/>
     </extensions>
+
+    <actions>
+        <action id="com.airsaid.localization.action.TranslateAction"
+                class="com.airsaid.localization.action.TranslateAction"
+                text="Translate to Other Languages"
+                icon="PluginIcons.TRANSLATE_ACTION_ICON"
+                description="Translate strings to other languages.">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="EditSource"/>
+        </action>
+    </actions>
 </idea-plugin>
