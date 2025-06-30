@@ -36,7 +36,7 @@ dependencies {
     compileOnly("com.google.auto.service:auto-service-annotations:1.1.1")
     annotationProcessor("com.google.auto.service:auto-service:1.1.1")
 
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.code.gson:gson:2.13.1")
     implementation("com.aliyun:alimt20181012:1.0.3")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
